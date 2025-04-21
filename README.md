@@ -8,7 +8,7 @@ A full‑stack invoice management dashboard built with Next.js, Tailwind CSS, Po
 
 - Displays a list of invoices with details (amount, due date, status)  
 - Supports creating, editing, and deleting invoices  
-- Provides user authentication via GitHub (NextAuth.js)  
+- Provides user authentication via NextAuth.js 
 - Connects to a PostgreSQL database via Neon
 - Auto‑deploys on Vercel 
 
@@ -17,9 +17,9 @@ A full‑stack invoice management dashboard built with Next.js, Tailwind CSS, Po
 ## 🛠 Tech Stack
 
 - **Next.js 13+** (App Router & Server Components)  
-- **React & TypeScript**  
+- **TypeScript**  
 - **Tailwind CSS** for utility‑first styling  
-- **NextAuth.js** for OAuth login (GitHub)  
+- **NextAuth.js** for OAuth login
 - **PostgreSQL** 
 - **Vercel** for CI/CD and hosting
 
@@ -27,12 +27,10 @@ A full‑stack invoice management dashboard built with Next.js, Tailwind CSS, Po
 
 ## 🚀 Getting Started
 
-
-
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/afk-jisan/invoice-next-js.git
-   cd invoice-dashboard
+   git clone https://github.com/yourusername/invoice-dashboard.git
+   cd invoice-next-js
    ```
 
 2. **Install dependencies**
@@ -44,12 +42,21 @@ A full‑stack invoice management dashboard built with Next.js, Tailwind CSS, Po
    - Copy `.env.example` to `.env`  
    - Add your database URL and `AUTH_SECRET`
 
-4. **Seed the database**
-   ```bash
-   pnpm dev
-   # Visit http://localhost:3000/seed to populate with sample data
-   ```
-
+4. **Setup and seed the database**
+   - **Create a Postgres database**  
+     1. In the Vercel dashboard, click **Continue to Dashboard**, switch to the **Storage** tab, and select **Create Database**.  
+     2. Pick your provider (Neon, Supabase, etc.) and click **Continue**.  
+     3. Choose a region (e.g., iad1 – Washington D.C.) to minimize latency.  
+     4. Once provisioned, open the **.env.local** tab, click **Show secret**, and copy the database URL snippet.  
+     5. Rename `.env.example` to `.env` in your project root and paste in the copied variables.  
+     6. Confirm `.env` is included in your `.gitignore` to keep secrets safe.
+   - **Seed the database**  
+     1. Start your local server:  
+        ```bash
+        pnpm dev
+        ```  
+     2. Navigate to `http://localhost:3000/seed` in your browser to run the seed script.  
+     3. After seeing **Database seeded successfully**, you may remove the `/seed` route.
 5. **Run the app**
    ```bash
    pnpm dev
@@ -65,12 +72,13 @@ A full‑stack invoice management dashboard built with Next.js, Tailwind CSS, Po
 
 ## ⭐ Key Features & Challenges
 
-- **Server Components**: Efficient data fetching without client bundle overhead
+- **Server Components**: Efficient data fetching 
+- **Next.js Routing**: App Router with file-based routing and nested layouts
+- **Server Actions**: Simplified server-side data mutations and form handling
+- **Streaming & Caching**: Enhanced performance with streaming UI and cache revalidation
 - **Authentication**: Seamless GitHub OAuth integration via NextAuth.js
-- **Database Seeding**: Custom `/seed` route for rapid prototyping
-- **CI/CD Workflow**: Instant preview URLs for every pull request
 
-Challenges faced included configuring authentication and securing environment variables in Vercel deployments.
+Challenges faced included configuring authentication and data mutation.
 
 ---
 
@@ -81,7 +89,7 @@ Challenges faced included configuring authentication and securing environment va
 
 Experience the live application at: [https://invoice-next-js-eight.vercel.app/](https://invoice-next-js-eight.vercel.app/)
 
-Use the credentials below to log in and explore:
+I will implement the registration a bit later. For now use the credentials below to log in and explore the dashboard and the rest of the functionalities: 
 
 - **Email**: `user@nextmail.com`
 - **Password**: `123456`
@@ -91,6 +99,8 @@ Use the credentials below to log in and explore:
 
 
 
-🎓 Credits
 
-This dashboard is based on the official Next.js App Router course. I studied the Next.js documentation and tutorials, implementing and extending the example code to fit an invoice management use case. For full course details, see the Next.js Learn curriculum.
+🎓 Credits
+---
+- This dashboard is based on the official Next.js App Router course. I have studied the Next.js documentation and implemented the example code to fit an invoice management use case. For more details, visit the Next.js website.
+- Thoughtfully put together by [afk-jisan](https://github.com/afk-jisan).
