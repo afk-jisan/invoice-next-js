@@ -29,7 +29,7 @@ A full‑stack invoice management dashboard built with Next.js, Tailwind CSS, Po
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/yourusername/invoice-dashboard.git
+   git clone https://github.com/afk-jisan/invoice-next-js.git
    cd invoice-next-js
    ```
 
