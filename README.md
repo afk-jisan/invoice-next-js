@@ -1,6 +1,6 @@
 # 📦 Invoice Dashboard
 
-A full‑stack invoice management dashboard built with Next.js, Tailwind CSS, PostgreSQL. Track, view, and manage invoices seamlessly with authentication and real‑time previews.
+A full‑stack invoice management dashboard built with Next.js, Tailwind CSS, PostgreSQL. Track, view, edit and delete invoices seamlessly with authentication and real‑time previews.
 
 ---
 
@@ -77,21 +77,20 @@ Challenges faced included configuring authentication and securing environment va
 
 
 
+## 🌐 Live Demo
+
+Experience the live application at: [https://invoice-next-js-eight.vercel.app/](https://invoice-next-js-eight.vercel.app/)
+
+Use the credentials below to log in and explore:
+
+- **Email**: `user@nextmail.com`
+- **Password**: `123456`
+
+---
 
 
 
 
+🎓 Credits
 
-
-
-
-
-
-
-
-
-
-## Creidt -
-
-This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
-For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
+This dashboard is based on the official Next.js App Router course. I studied the Next.js documentation and tutorials, implementing and extending the example code to fit an invoice management use case. For full course details, see the Next.js Learn curriculum.
