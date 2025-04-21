@@ -11,7 +11,38 @@ import { revalidatePath } from 'next/cache'; // revalidatePath is used to revali
 import { redirect } from 'next/navigation'; // Redirect is used to redirect the user to a different page after the action is completed
 
 
+
+import { signIn } from '@/auth';
+import { AuthError } from 'next-auth';
+
+
+export async function authenticate(
+    prevState: string | undefined,
+    formData: FormData,
+  ) {
+    try {
+      await signIn('credentials', formData);
+    } catch (error) {
+      if (error instanceof AuthError) {
+        switch (error.type) {
+          case 'CredentialsSignin':
+            return 'Invalid credentials.';
+          default:
+            return 'Something went wrong.';
+        }
+      }
+      throw error;
+    }
+  }
+
+
+
+
+
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' }); // connect to the database
+
+
+
 
 
 // basic approach: getting the form data and parsing it to a JSON object
@@ -23,6 +54,10 @@ const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' }); // connect 
 //     }
 //     console.log(rawFormData);
 // }
+
+
+
+
 
 
 
